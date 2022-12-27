@@ -4,11 +4,13 @@ Feature: Registrar un nuevo usuario
   quiero registrarme en el aplicativo
   para comprar productos
 
+  @reTest @regresion
   Scenario: Registro correcto del cliente
     Given que el cliente entre a la pagina de registro
     When llene el formulario correctamente
     Then recibira el siguiente mensaje "Your registration completed"
 
+  @reTest
   Scenario Outline: Campos incompletos registro cliente
     Given que el cliente ingrese a la pagina de registro
     When no llene el campo: "<campo>"
