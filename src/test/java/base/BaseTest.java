@@ -15,7 +15,6 @@ import static demo.tricentis.demowebshop.util.Log4jValues.LOG4J_PROPERTIES_FILE_
 
 public class BaseTest {
     protected static WebDriver driver;
-    protected static HomePage homePage;
     private static final Logger LOGGER = Logger.getLogger(BaseTest.class);
 
     public static void setUp(){
@@ -34,11 +33,6 @@ public class BaseTest {
         PropertyConfigurator.configure(USER_DIR.value() + LOG4J_PROPERTIES_FILE_PATH.getValue());
     }
 
-    public static void main(String args[]){
-        setUp();
-        RegisterPage registerPage = homePage.clickFormAuth();
-        registerPage.registerPerson();
-    }
 
     public void errorManagement(Exception exception){
         Assertions.fail(exception.getMessage(), exception);

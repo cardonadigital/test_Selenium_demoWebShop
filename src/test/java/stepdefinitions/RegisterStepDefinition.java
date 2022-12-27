@@ -15,7 +15,7 @@ public class RegisterStepDefinition extends BaseTest {
     private static HomePage homePage;
     private static RegisterPage registerPage;
 
-    @Given("que el cliente entro a la pagina de registro")
+    @Given("que el cliente entre a la pagina de registro")
     public void queElClienteEntroALaPaginaDeRegistro() {
         try {
             setUp();
@@ -48,7 +48,7 @@ public class RegisterStepDefinition extends BaseTest {
 
 
 
-    @Given("que el cliente entra a la pagina de registro")
+    @Given("que el cliente ingrese a la pagina de registro")
     public void queElClienteEntraALaPaginaDeRegistro() {
         try {
             setUp();

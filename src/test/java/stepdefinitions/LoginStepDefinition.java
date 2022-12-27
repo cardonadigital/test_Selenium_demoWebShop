@@ -18,7 +18,7 @@ public class LoginStepDefinition extends BaseTest {
     private static LoginPage loginPage;
     private static LoginUser user;
 
-    @Given("que el cliente entre a la pagina web")
+    @Given("que el cliente entre al modulo de logueo")
     public void queElClienteEntreALaPaginaWeb() {
         try {
             setUp();
@@ -56,7 +56,7 @@ public class LoginStepDefinition extends BaseTest {
 
 
 
-    @Given("que el cliente ingrese a la pagina web")
+    @Given("que el cliente ingrese al modulo de logueo")
     public void queElClienteIngreseALaPaginaWeb() {
         try {
             setUp();

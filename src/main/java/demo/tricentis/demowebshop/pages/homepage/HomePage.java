@@ -1,6 +1,7 @@
 package demo.tricentis.demowebshop.pages.homepage;
 
 import demo.tricentis.demowebshop.common.BasePageActions;
+import demo.tricentis.demowebshop.pages.contactpage.ContactPage;
 import demo.tricentis.demowebshop.pages.loginpage.LoginPage;
 import demo.tricentis.demowebshop.pages.registerpage.RegisterPage;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,10 @@ public class HomePage extends BasePageActions {
     @CacheLookup
     private WebElement logIn;
 
+    @FindBy(xpath = "/html/body/div[4]/div[2]/div[1]/div[1]/ul/li[6]/a")
+    @CacheLookup
+    private WebElement contact;
+
     public HomePage(WebDriver driver, Integer waitingTime) {
         super(driver, waitingTime);
         initElement(driver, this);
@@ -38,5 +43,10 @@ public class HomePage extends BasePageActions {
 
     public void clickLogOut(){
         clickOnElement(logOut);
+    }
+
+    public ContactPage clickContact(){
+        clickOnElement(contact);
+        return new ContactPage(driver, 10);
     }
 }
