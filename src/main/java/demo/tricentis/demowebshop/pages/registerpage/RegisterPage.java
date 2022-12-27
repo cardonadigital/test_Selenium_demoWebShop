@@ -64,7 +64,6 @@ public class RegisterPage extends BasePageActions{
     public RegisterPage(WebDriver driver, Integer waitingTime) {
         super(driver, waitingTime);
         initElement(driver, this);
-        //System.out.println(faker.dog().gender() + faker.name().firstName() + fakeValuesService.bothify("????##@gmail.com") + fakeValuesService.regexify("[a-z1-9]{10}"));
     }
 
     public LoginUser registerPerson(){

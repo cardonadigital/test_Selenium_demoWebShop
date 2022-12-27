@@ -1,14 +1,18 @@
 package demo.tricentis.demowebshop.common;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.function.Function;
 
 public class BasePageActions {
     private static final Logger LOGGER = Logger.getLogger(BasePageActions.class);
@@ -27,6 +31,11 @@ public class BasePageActions {
         } catch (Exception e) {
             LOGGER.warn(e.getMessage(), e);
         }
+    }
+
+    public WebElement waiElement(By locator){
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     protected void initElement(WebDriver driver, Object page) {

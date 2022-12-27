@@ -9,32 +9,45 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePageActions {
-    @FindBy(id = "Email")
+    @FindBy(xpath = "//*[@id=\"Email\"]")
     @CacheLookup
-    private WebElement email;
+    private WebElement emailInput;
 
-    @FindBy(id = "Password")
+    @FindBy(xpath = "//*[@id=\"Password\"]")
     @CacheLookup
-    private WebElement password;
+    private WebElement passwordInput;
 
-    @FindBy(className = "button-1 login-button")
+    @FindBy(className = "login-button")
     @CacheLookup
     private WebElement loginButton;
 
-    WebElement myAccount = driver.findElement(By.className("account"));
 
     public LoginPage(WebDriver driver, Integer waitingTime) {
         super(driver, waitingTime);
-        initElement(driver, 10);
+        initElement(driver, this);
     }
 
     public void loginUser(LoginUser user){
-        fillField(email, user.getEmail());
-        fillField(email, user.getPassword());
+        fillField(emailInput, user.getEmail());
+        fillField(passwordInput, user.getPassword());
         clickOnElement(loginButton);
     }
 
-    public String accountEmail(){
+    public void loginUser(String email, String password){
+        fillField(emailInput, email);
+        fillField(passwordInput, password);
+        clickOnElement(loginButton);
+    }
+
+    public String getAccountEmail(){
+        By myAccountLocator = By.className("account");
+        WebElement myAccount = waiElement(myAccountLocator);
         return getTextFromElement(myAccount);
+    }
+
+    public String getErrorLogin(){
+        By errorLocator = By.className("validation-summary-errors");
+        WebElement errorElement = waiElement(errorLocator);
+        return getTextFromElement(errorElement);
     }
 }

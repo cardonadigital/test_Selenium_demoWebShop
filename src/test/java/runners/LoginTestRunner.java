@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         publish = true,
-        features = {"src/test/resources/features/register.feature"},
+        features = {"src/test/resources/features/login.feature"},
         glue = "stepdefinitions",
-        plugin = {"pretty", "html:target/cucumber-reports-register.html"}
+        plugin = {"pretty", "html:target/cucumber-reports_Login.html"}
 )
-public class RegisterTestRunner {
+public class LoginTestRunner {
 }

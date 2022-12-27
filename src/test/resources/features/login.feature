@@ -13,6 +13,6 @@ Feature: Ingresar al aplicativo web
   Scenario: Ingreso incorrecto del cliente
     Given que el cliente entre a la pagina web
     When ingrese los datos que no pertenezcan a ninguna cuenta registrada
-    Then no podra ingresar
+    Then no podra ingresar a la cuenta
 
 

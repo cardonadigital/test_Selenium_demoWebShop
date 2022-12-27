@@ -1,6 +1,7 @@
 package demo.tricentis.demowebshop.pages.homepage;
 
 import demo.tricentis.demowebshop.common.BasePageActions;
+import demo.tricentis.demowebshop.pages.loginpage.LoginPage;
 import demo.tricentis.demowebshop.pages.registerpage.RegisterPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,6 +17,10 @@ public class HomePage extends BasePageActions {
     @CacheLookup
     private WebElement logOut;
 
+    @FindBy(className = "ico-login")
+    @CacheLookup
+    private WebElement logIn;
+
     public HomePage(WebDriver driver, Integer waitingTime) {
         super(driver, waitingTime);
         initElement(driver, this);
@@ -24,5 +29,14 @@ public class HomePage extends BasePageActions {
     public RegisterPage clickFormAuth() {
         clickOnElement(register);
         return new RegisterPage(driver, 10);
+    }
+
+    public LoginPage clickLogin(){
+        clickOnElement(logIn);
+        return new LoginPage(driver, 10);
+    }
+
+    public void clickLogOut(){
+        clickOnElement(logOut);
     }
 }
